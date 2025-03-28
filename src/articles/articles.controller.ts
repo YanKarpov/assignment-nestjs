@@ -35,10 +35,8 @@ export class ArticlesController {
   @ApiQuery({ name: 'tag', required: false })
   @ApiQuery({ name: 'author', required: false })
   @ApiQuery({ name: 'favorited', required: false })
-  @ApiQuery({ name: 'limit', required: false })
-  @ApiQuery({ name: 'offset', required: false })
-
-
+  @ApiQuery({ name: 'limit', required: false, default: 20 })
+  @ApiQuery({ name: 'offset', required: false, default: 0 })
   async findAll(
     @Query('tag') tag: string,
     @Query('author') author: string,
